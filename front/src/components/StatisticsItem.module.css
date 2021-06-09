@@ -1,0 +1,41 @@
+.progress {
+  font-weight: 800;
+  font-size: 14px;
+  color: #ec8944;
+}
+
+.title {
+  font-size: 12px;
+  color: #454545;
+}
+
+.item {
+  width: calc(50% - 32px);
+  height: 138px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.inner {
+  position: relative;
+  margin-top: 9px;
+  margin-left: 6px;
+}
+.inner::before {
+  position: absolute;
+  content: '';
+  background-image: url('../images/content/quizrezult/sad.png');
+  position: absolute;
+  z-index: 999;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+  left: -8px;
+  right: 0;
+  top: -8px;
+  bottom: 0;
+}

@@ -1,0 +1,14 @@
+.footer {
+  min-height: 60px;
+  display: flex;
+  // bottom: 0px;
+  width: 100%;
+  // position: fixed;
+  align-items: center;
+  color: #ffff;
+  background-color: grey;
+
+  &__copy {
+    text-align: center;
+  }
+}

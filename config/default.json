@@ -1,0 +1,5 @@
+{
+  "port": 5000,
+  "jwtSecret": "CodeItProj",
+  "mongoUri": "mongodb+srv://CodeIt:QsErty123@cluster0.uo9ma.mongodb.net/codeit?retryWrites=true&w=majority"
+}

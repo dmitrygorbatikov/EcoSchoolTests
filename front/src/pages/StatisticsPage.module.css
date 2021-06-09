@@ -1,0 +1,19 @@
+.inner {
+  height: 100vh;
+  padding: 20px 0 0px;
+}
+
+.title {
+  display: block;
+  font-size: 24px;
+  color: #408f65;
+  text-align: center;
+}
+
+.items {
+  padding: 15px 0 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}

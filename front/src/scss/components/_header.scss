@@ -1,0 +1,148 @@
+.header {
+  position: relative;
+  min-height: 66px;
+  padding: 2px 0;
+  background-color: #fff;
+  box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+
+  &__inner {
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+  }
+
+  &__link {
+    // display: none;
+    min-width: 84px;
+    // margin: 0 auto;
+    padding: 6px 16px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #efeff0;
+    color: #37383c;
+    border-radius: 16px;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+
+    &__popup {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 3px;
+      background-color: transparent;
+      border: none;
+
+      &::after {
+        position: absolute;
+        content: '';
+        top: 13px;
+        left: 5px;
+        width: 30px;
+        height: 2px;
+        background-color: #37383c;
+        border-radius: 1px;
+        box-shadow: 0 6px 0 0 #37383c, 0 12px 0 0 #37383c;
+      }
+    }
+
+    &__list {
+      display: flex;
+      margin-top: 4px;
+      margin-left: 40px;
+    }
+
+    &__item {
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+    }
+
+    &__link {
+      color: #37383c;
+    }
+
+    &__list-popup {
+      position: absolute;
+      max-width: 100%;
+      width: 100%;
+      top: 72px;
+      left: 0px;
+      padding: 20px 0 20px 20px;
+      background-color: #fff;
+      z-index: 10;
+      transform: translateX(-200%);
+
+      &--active {
+        transform: translateX(0%);
+      }
+    }
+
+    &__item-popup {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+
+    &__link-popup {
+      color: $accent;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1024px) {
+  .header {
+    .menu {
+      &__popup {
+        display: none;
+      }
+      &__item {
+        &--active {
+          margin-top: -4px;
+          padding: 4px 18px;
+          background-color: rgb(2, 196, 2);
+          border-radius: 13px;
+          transform: translateX(0%);
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: rgb(1, 146, 1);
+          }
+
+          .menu__link {
+            color: #fff;
+          }
+        }
+      }
+
+      &__list-popup {
+        display: none;
+        top: 60px;
+        padding-left: 0;
+      }
+
+      &__item-popup {
+        min-width: 300px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+}

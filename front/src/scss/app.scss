@@ -1,0 +1,12 @@
+@import 'reset'; //сброс всех стилей
+@import 'vars'; //переменные для цвета для шрифта
+@import 'fonts'; // подключение шрифтов
+@import 'global'; // подключение глобальных стилей типо reset.css, то что на body для сылок
+@import 'components/header'; // адаптив
+@import 'components/footer'; // адаптив
+@import 'components/card-eco'; // адаптив
+@import 'components/dropdown'; // адаптив
+@import 'components/quest'; // адаптив
+@import 'home/home'; // адаптив
+@import 'quizresult/quiz-result'; // адаптив
+@import '../css/circle'; // адаптив

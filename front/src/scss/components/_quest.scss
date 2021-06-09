@@ -1,0 +1,74 @@
+.quest-images {
+  width: 240px;
+  height: 135px;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.quest-images.disabled {
+  display: none;
+}
+
+.quest-text,
+.quest-answer {
+  height: 55px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  color: #3d3d3d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.quest-text.disabled {
+  display: none;
+}
+
+.quest-answer {
+  height: 100%;
+  max-height: 200px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  color: #3d3d3d;
+  overflow-y: auto;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.quest-answer {
+  display: none;
+}
+
+.quest-answer.active {
+  display: inline-block;
+}
+
+.quest-answer.active:hover {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  -moz-overflow-scrolling: touch;
+  -ms-overflow-scrolling: touch;
+  -o-overflow-scrolling: touch;
+  // overflow-scrolling: touch;
+}
+
+.quest-answer.active::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 2px;
+}
+.quest-answer.active::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
