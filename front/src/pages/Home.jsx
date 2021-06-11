@@ -7,7 +7,7 @@ import {Loader} from "../components/Loader";
 function Home() {
   const {request, loading} = useHttp()
   const {token} = useContext(AuthContext)
-  const [user, setUser] = useState('')
+  const [user, setUser] = useState([])
   const [quizzes, setQuizzes] = useState([])
 
   const getUser = useCallback(async () => {
@@ -33,6 +33,7 @@ function Home() {
     getQuizzes()
   }, [getUser, getQuizzes])
 
+
   if(loading){
     return <Loader/>
   }
@@ -42,7 +43,7 @@ function Home() {
   return (
     <div className="container">
       <div className="content__inner">
-        <span className="content__title title">Привіт, {user}</span>
+        <span className="content__title title">Привіт, {user.name} {user.surname}</span>
         <p className="content__text">Доступні тести</p>
 
         <div className="content__box">

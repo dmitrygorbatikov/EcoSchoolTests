@@ -1,15 +1,21 @@
 import classNames from 'classnames';
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {Link, useParams} from 'react-router-dom';
 import { Quest } from '../components';
 import style from './QuizAnswer.module.css';
 
 const QuizAnswer = ({ questions, quizTitle }) => {
 
-    const [currentStep, setCurrentStep] = React.useState(0);
-    const [counter, setCounter] = React.useState(0);
+
+    const [currentStep, setCurrentStep] = useState(0);
+
+
+
+    const [counter, setCounter] = useState(0);
 
     let numberStep = questions.length;
+
+
 
     function stepCountThisQuest(currentStep) {
       let newCount = 0;
@@ -20,6 +26,7 @@ const QuizAnswer = ({ questions, quizTitle }) => {
       }
     }
 
+
     let newArr = questions.map((el, index) => {
       return (
         <div style={{textAlign: 'center'}} className={classNames(style.card, index == currentStep ? style.active : '')}>
@@ -28,9 +35,10 @@ const QuizAnswer = ({ questions, quizTitle }) => {
               question={el}
               questions_length={questions.length}
 
-              onClick={async (currentStep) => {
+              onClickNext={ () => {
                   setCurrentStep((p) => ++p)
               }}
+
               currentStep={currentStep}
               numberStep={numberStep}
           />
@@ -41,11 +49,20 @@ const QuizAnswer = ({ questions, quizTitle }) => {
       <div  className={style.wrapper}>
         <div className={style.inner}>
           <svg
+              style={{cursor: "pointer"}}
             width="20"
             height="14"
             viewBox="0 0 20 14"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg">
+            xmlns="http://www.w3.org/2000/svg"
+            onClick={() => {
+
+                if(currentStep > 0){
+                    setCurrentStep(p => --p)
+
+                }
+            }}
+          >
             <path
               fillRule="evenodd"
               clipRule="evenodd"
@@ -72,7 +89,7 @@ const QuizAnswer = ({ questions, quizTitle }) => {
         </div>
         <div className={style.items}>{newArr}</div>
       </div>
-    );
-};
+    )
+}
 
 export default QuizAnswer;

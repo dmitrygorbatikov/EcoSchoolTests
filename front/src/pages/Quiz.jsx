@@ -9,15 +9,8 @@ import {useHttp} from "../hooks/http.hook";
 import {AuthContext} from "../context/AuthContext";
 import {Loader} from "../components/Loader";
 
-function Quiz( ) {
+function Quiz() {
   const { id } = useParams();
-  // let quests = [];
-  //
-  // quiz.map((obj) => {
-  //   obj.questions.map((quest) => {
-  //     quests.push(quest);
-  //   });
-  // });
     const {request,loading} = useHttp()
     const {token} = useContext(AuthContext)
     const [quizInfo, setQuizInfo] = useState([])
@@ -33,11 +26,14 @@ function Quiz( ) {
     useEffect(() => {
         getQuizInfo()
     }, [getQuizInfo])
+
+    let arr = []
+    localStorage.setItem('answers', JSON.stringify(arr))
+
     if(loading){
         return <Loader/>
     }
-    let arr = []
-    localStorage.setItem('answers', JSON.stringify(arr))
+
 
   return (
     <div

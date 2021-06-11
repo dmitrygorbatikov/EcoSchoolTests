@@ -1,8 +1,5 @@
-import React, { useState, setState, Component } from 'react';
+import React, { useState} from 'react';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
-
-import style from './Quest.module.css';
 
 const ButtonQuestAnsw = ({
     question,
@@ -16,6 +13,7 @@ const ButtonQuestAnsw = ({
     currentStep,
 }) => {
 
+
   const [activeClass, setClass] = useState('');
 
   const [counterState, setCounterState] = useState(0);
@@ -23,18 +21,16 @@ const ButtonQuestAnsw = ({
 
 
 
-  //поиск ид елемента труе
-  let findTrueAnswer
-  if(answer.right == true){
-    findTrueAnswer = answer._id
-  }
-  // const findTrueAnswer = correct === true ? id : '';
+
 
   function trueItem() {
-    return answer.right == true
-      ? (setClass('correct'), setActiveBtn('active'))
-      : (setClass('selected'), setActiveBtn('active'));
-  }
+              return answer.right == true
+                  ? (setClass('correct'), setActiveBtn('active'))
+                  : (setClass('selected'), setActiveBtn('active'));
+          }
+
+
+
 
 
   return (
@@ -42,9 +38,9 @@ const ButtonQuestAnsw = ({
       className={classNames('item', activeClass, classCorrect, disabledClass)}
       onClick={() => {
 
-          let a = JSON.parse(localStorage.getItem('answers'))
-          a.push(answer)
-          localStorage.setItem('answers', JSON.stringify(a))
+          let b = JSON.parse(localStorage.getItem('answers'))
+          b.push(answer)
+          localStorage.setItem('answers', JSON.stringify(b))
 
         trueItem();
       }}>

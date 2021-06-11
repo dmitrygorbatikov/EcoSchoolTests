@@ -6,6 +6,10 @@
   }
 }
 
+.dd-wrapper{
+  display: none;
+}
+
 .dd-list {
   position: absolute;
   top: 70px;
@@ -64,4 +68,10 @@
   width: 100%;
   text-align: right;
   color: red;
+}
+
+@media (max-width: 1024px) {
+  .dd-wrapper{
+    display: block;
+  }
 }

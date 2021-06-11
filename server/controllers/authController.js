@@ -58,7 +58,7 @@ class AuthController{
     async getUser(req,res){
         try{
             await User.findById(req.user.userId).then((user) => {
-                return res.status(200).json(user.first_name)
+                return res.status(200).json({name: user.first_name, surname: user.second_name})
             })
         }
         catch (e) {

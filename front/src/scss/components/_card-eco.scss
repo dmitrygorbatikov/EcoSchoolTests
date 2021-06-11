@@ -21,14 +21,9 @@
 
   &__title {
     max-width: 170px;
-    max-height: 40px;
-    // margin: 0 auto;
     font-size: 18px;
     font-weight: 600;
     color: #004d38;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 
     & span {
       font-size: 12px;
@@ -47,6 +42,15 @@
     margin-right: 20px;
   }
 }
+@media (max-width: 539px) {
+  .card-eco{
+    max-height: 120px;
+
+
+    &__box{
+  }
+  }
+}
 
 @media (min-width: 540px) {
   .card-eco {
@@ -59,8 +63,8 @@
     }
 
     &__title {
-      max-width: 200px;
-      max-height: 30px;
+
+      max-width: 320px;
       font-size: 20px;
     }
 
@@ -68,6 +72,8 @@
       width: 64px;
       height: 64px;
     }
+
+
   }
 }
 

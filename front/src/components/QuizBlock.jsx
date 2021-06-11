@@ -1,8 +1,6 @@
 import React, {useCallback, useContext, useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import {useHttp} from "../hooks/http.hook";
-import {Loader} from "./Loader";
-import {useAuth} from "../hooks/auth.hook";
 import {AuthContext} from "../context/AuthContext";
 
 const QuizBlock = ({ quiz }) => {
@@ -45,7 +43,7 @@ const QuizBlock = ({ quiz }) => {
                    style={{backgroundColor: a ? '#bfbfbf' : quiz.color}}
                    className="card-eco">
             <div className="card-eco__box">
-              <h2 className="card-eco__title">{quiz.quiz_title}</h2>
+              <p className="card-eco__title">{quiz.quiz_title}</p>
               <p style={{color: 'red', margin: 0, fontSize: '12px'}} className={!a ? 'quiz_display_none' : ''}>Ви вже проходили цей тест</p>
               {/*<span>клас {quiz.class}</span>*/}
             </div>
